@@ -7,16 +7,16 @@
     {{#with main}}
     <main>
         <section>
-            {{> title data="All skills" big=true}}
+            {{> title data="All Skills" big=true}}
             <ul>
                 {{#each skills}}
                 <li>
                     {{name}}
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
-                    {{#if isTop}} (TOP) {{/if}}
-                    {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
+                    {{#if isTop}} [Top] {{/if}}
+                    {{#unless point includeZero=true}} Not Study... {{/unless}}
                     {{#unless point}}
-                        {{#if point includeZero=true}} (зараз вивчаємо) {{/if}} 
+                        {{#if point includeZero=true}} [Study process...] {{/if}} 
                     {{/unless}}
                 </li>
                 {{/each}}

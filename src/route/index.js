@@ -7,29 +7,29 @@ const router = express.Router()
 
 var header = {
   name: {
-    firstname: 'Dmytro',
-    lastname: 'Ivanov',
+    firstname: 'Vladyslav',
+    lastname: 'Slavykovskyi',
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ per month',
-  address: 'Київ, Хрещатик 5',
+  address: 'Київ, Ukraine',
 }
 
 var footer = {
   social: {
     email: {
-      text: 'dmytro@mail.com',
-      href: 'mailto:dmytro@mail.com',
+      text: 'vladyslav@mail.com',
+      href: 'mailto:vladyslav@mail.com',
     },
 
     phone: {
-      text: '+380670000123',
-      href: 'tel:+380670000123',
+      text: '+380732045302',
+      href: 'tel:+380732045302 ',
     },
 
     linkedin: {
       text: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/dmytro-test',
+      href: 'https://www.linkedin.com/in/vladyslav',
     },
   },
 }
@@ -128,15 +128,15 @@ router.get('/skills', function (req, res) {
 
       hobbies: [
         {
-          name:'Фотографія',
+          name: 'Game',
           isMain: true,
         },
         {
-          name: 'Теніс',
+          name: 'Draw',
           isMain: false,
         },
         {
-          name: 'Стрибки з парашутом',
+          name: 'Cooking',
           isMain: false,
         },
       ],
@@ -160,34 +160,34 @@ router.get('/education', function (req, res) {
     main: {
       education: [
         {
-          name: 'сш №2 м.Конотоп',
+          name: 'Mykolaiv Sea Lyceum',
           isEnd: true,
         },
         {
-          name: 'КПІ',
+          name: 'KNUTD',
           isEnd: true,
         },
         {
-          name: 'Stanford University',
+          name: 'IT-Brains',
           isEnd: false,
         },
         {
-          name: 'Harvard University',
+          name: 'Full-Stack',
           isEnd: false,
         },
       ],
 
       certificates: [
         {
-          name:'The European Language Certificates',
+          name: 'FullStack',
           id: 56,
         },
         {
-          name: 'Educational Testing Service Global',
+          name: 'Test Certifacates',
           id: 88,
         },
         {
-          name: 'Pearson Test of English General',
+          name: 'English Test',
           id: 9,
         },
       ],
@@ -218,13 +218,13 @@ router.get('/work', function (req, res) {
             url: null,
           },
           duration: {
-            from: '10.10.2022',
+            from: '03.02.2023',
             to: null,
           },
           projectAmount: 3,
           projects: [
             {
-              name: 'Crypto World',
+              name: 'SteamApp',
               url: 'https://www.youtube.com/',
               about: `First Trustworthy Review Platform, Built With Blockchain Technology.
               Crypto World is a review platform that aims to curate and reward user
@@ -245,18 +245,17 @@ router.get('/work', function (req, res) {
               ],
               awards: [
                 {
-                  name: 'Starship X',
+                  name: 'Oscar',
                 },
                 {
-                  name: 'Raptor 12',
+                  name: 'Grammy',
                 },
               ],
-                stackAmount: 5,
-                awardAmount: 25,
+              stackAmount: 5,
+              awardAmount: 25,
             },
           ],
         },
-
       ],
     },
 
