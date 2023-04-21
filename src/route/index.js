@@ -267,6 +267,7 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
+    layout: 'person',
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -316,14 +317,15 @@ router.get('/person', function (req, res) {
                       team_leader: {
                         name: 'John Smith',
                         title: 'Team Leader',
-                        email: 'john.smith@example.com',
+                        email:
+                          'mailto:john.smith@example.com',
                       },
                       team_members: [
                         {
                           name: 'Alice Johnson',
                           title: 'Software Engineer',
                           email:
-                            'alice.johnson@example.com',
+                            'mailto:alice.johnson@example.com',
                           skills: ['Java', 'Python', 'SQL'],
                           projects: [
                             {
