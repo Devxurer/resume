@@ -1,0 +1,88 @@
+<div>
+    {{#with person}}
+	 <section>
+		<h1>{{name}}</h1>
+		<br>
+		<b>Вік так гендер: {{age}}, {{gender}}.</b>
+		<br>
+		
+		<b>Адреса: {{address.country}}, {{address.state}}, {{address.city}}, {{address.street}}, {{address.zip}}.</b>
+		
+	 </section>
+
+	 <hr />
+	
+	 <section>
+		<h3>Освіта</h3>
+		<br>
+		{{#each education }}
+		<b>Місто освіти та ступень:</b> {{degree}}, {{major}}, {{university}}. 
+		<br>
+		<b>Рік випуску:</b> {{graduationYear}}.
+		{{/each}}
+	 </section>
+	 <hr />
+	 <section>
+		<h3>Міста роботи</h3>
+		{{#each workExperience}}
+		<br>
+		<b>Компанія:</b> {{company}}, як {{title}}.
+		<br>
+		<b>Час праці:</b> від {{startDate}} до {{endDate}}
+		<br>
+		<b>Обов'язки:</b> {{responsibilities}}
+		<br>
+		<b>Дата заснування:</b> {{year_founded}}
+		<br>
+		<b>Індустрія:</b> {{industry}} <br>
+		===================================
+		<br>
+		<b>Компанія:</b> {{company}}.
+		<br> 
+		{{#each employees}}
+		<br>
+		<b>Голова компанії: </b> {{name}}, {{position}}, {{department}}
+		<br>
+			<h4>Проекти компанії</h4>
+			{{#each projects}}
+			<b>Проект 1:</b> {{name}} <br>
+			Статус проекту - [ {{status}} ] <br>
+			Доповнення - <blockquote>{{description}}</blockquote>
+			<br>
+			{{#each teams}}
+			Лідер команди [ {{team_name}} ] : 
+			<ul>
+				<li>{{team_leader.name}}, посада - {{team_leader.title}}</li>
+				<li> Контакти: {{> link href=team_leader.email text='john.smith@example.com'}}</li>
+			</ul>
+			<br>
+			{{#each team_members}}
+			<div>
+				Члени команди: 
+				<br>
+				[{{name}}] = Посада: {{title}} = Контакти: {{> link href=team_members.email text='alice.johnson@example.com'}} <br>
+				Скіли працівника: {{skills}} <br>
+				Проекти працівника та його підопечні <br>
+				{{#each projects}}
+				<b>Проект 1: {{name}} </b> <br>
+				Доповнення - <blockquote>{{description}}</blockquote> <br>
+				Технології які використовували у процесі розробки: {{technologies}} <br> 
+				Підопечні та їх посада: <br>
+				<ul> {{#each team_members}}
+					<li>{{name}} === {{title}}</li>
+				</ul>
+				{{/each}}
+				{{/each}}
+			</div>
+			{{/each}}
+			{{/each}}
+
+			{{/each}}
+		{{/each}}
+		{{/each}}
+		
+	 </section>
+	
+
+	 {{/with}}
+</div>
