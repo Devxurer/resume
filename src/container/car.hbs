@@ -1,0 +1,185 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+   <h1 style="margin-left: 20px;">{{make}} {{model}} {{year}} <span class="badge bg-secondary">{{color}}</span></h1> <br>
+	{{#with features}}
+	<table class="table table-dark table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Interior</th>
+      <th scope="col">Exterior</th>
+      <th scope="col">Safety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>
+			<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Seats
+  </button>
+  <ul class="dropdown-menu">
+	{{#with interior}}
+    <li><a class="dropdown-item" href="#">{{seats.material}}</a></li>
+    <li><a class="dropdown-item" href="#">{{seats.color}}</a></li>
+    <li><a class="dropdown-item" href="#">Heated:{{seats.heated}}</a></li>
+	 <li><a class="dropdown-item" href="#">Ventilated:{{seats.ventilated}}</a></li>
+	 {{/with}}
+  </ul>
+		</div>
+	</td>
+      <td><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Wheels
+  </button>
+  <ul class="dropdown-menu">
+	{{#with exterior}}
+    <li><a class="dropdown-item" href="#">Wheels size: {{wheels.size}}</a></li>
+    <li><a class="dropdown-item" href="#">Type: {{wheels.type}}</a></li>
+    <li><a class="dropdown-item" href="#">Color: {{wheels.color}}</a></li>
+	 {{/with}}
+  </ul>
+</div>
+	</td>
+      <td><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Airbags
+  </button>
+  <ul class="dropdown-menu">
+	{{#with safety}}
+    <li><a class="dropdown-item" href="#">Front: {{airbags.front}}</a></li>
+    <li><a class="dropdown-item" href="#">Side: {{airbags.side}}</a></li>
+    <li><a class="dropdown-item" href="#">Knee: {{airbags.knee}}</a></li>
+	 <li><a class="dropdown-item" href="#">Rear: {{airbags.rear}}</a></li>
+	 {{/with}}
+  </ul>
+</div></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>
+			<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dashboard
+  </button>
+  <ul class="dropdown-menu">
+	{{#with interior}}
+    <li><a class="dropdown-item" href="#">{{dashboard.material}}</a></li>
+    <li><a class="dropdown-item" href="#">{{dashboard.color}}</a></li>
+    <li><a class="dropdown-item" href="#">Display:{{dashboard.display.type}}, {{dashboard.display.size}}, {{dashboard.display.resolution}}, touchscreen: {{dashboard.display.touchscreen}}</a></li>
+	 {{/with}}
+  </ul>
+</div>
+	</td>
+      <td><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Headlights
+  </button>
+  <ul class="dropdown-menu">
+	{{#with exterior}}
+    <li><a class="dropdown-item" href="#">Type: {{headlights.type}}</a></li>
+    <li><a class="dropdown-item" href="#">Brightness: {{headlights.brightness}}</a></li>
+    <li><a class="dropdown-item" href="#">Automatic: {{headlights.automatic}}</a></li>
+	 {{/with}}
+  </ul>
+</div></td>
+      <td><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Assistance
+  </button>
+  <ul class="dropdown-menu">
+	{{#with safety}}
+    <li><a class="dropdown-item" href="#">Blind Spot: {{assistance.blind_spot_monitoring}}</a></li>
+    <li><a class="dropdown-item" href="#">Traffic Alert: {{assistance.rear_cross_traffic_alert}}</a></li>
+    <li><a class="dropdown-item" href="#">Lane Warning: {{assistance.lane_departure_warning}}</a></li>
+	 <li><a class="dropdown-item" href="#">Collision Warning: {{assistance.collision_warning}}</a></li>
+	 <li><a class="dropdown-item" href="#">Cruis Controle: {{assistance.adaptive_cruise_control}}</a></li>
+	 {{/with}}
+  </ul>
+</div></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="1"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Audio
+  </button>
+  <ul class="dropdown-menu">
+	{{#with interior}}
+    <li><a class="dropdown-item" href="#">{{audio.system}}</a></li>
+    <li><a class="dropdown-item" href="#">Speakers: {{audio.speakers}}</a></li>
+    <li><a class="dropdown-item" href="#">Subwoofer:{{audio.subwoofer}}</a></li>
+	 <li><a class="dropdown-item" href="#">bluetooth:{{audio.bluetooth}}</a></li>
+	 <li><a class="dropdown-item" href="#">USB:{{audio.USB}}</a></li>
+	 {{/with}}
+  </ul>
+</div></td>
+      <td colspan="2"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Sunroof
+  </button>
+  <ul class="dropdown-menu">
+	{{#with exterior}}
+    <li><a class="dropdown-item" href="#">Type: {{sunroof.type}}</a></li>
+    <li><a class="dropdown-item" href="#">Size: {{sunroof.size}}</a></li>
+    <li><a class="dropdown-item" href="#">Automatic: {{sunroof.automatic}}</a></li>
+	 {{/with}}
+  </ul>
+</div></td>
+    </tr>
+  </tbody>
+</table>
+{{/with}}
+<section>
+ <br>
+	<ul class="list-group">
+ 		<span class="badge text-bg-dark">
+			<li class="list-group-item disabled" aria-disabled="true">Engine</li>
+		</span>
+		{{#with engine}}
+  		<li class="list-group-item">{{type}}</li>
+  		<li class="list-group-item">displacement: {{displacement}}</li>
+  		<li class="list-group-item">horsepower: {{horsepower}}</li>
+		<li class="list-group-item">torque: {{torque}}</li>
+		<li class="list-group-item">transmission: {{transmission.type}}, gears {{transmission.gears}}</li>
+		{{/with}}
+	</ul>
+</section>
+<section>
+ <br>
+	<ul class="list-group">
+ 		<span class="badge text-bg-dark">
+			<li class="list-group-item disabled" aria-disabled="true">Fuel Economy</li>
+		</span>
+		{{#with fuel_economy}}
+  		<li class="list-group-item">City: {{city}}</li>
+  		<li class="list-group-item">highway: {{highway}}</li>
+		<li class="list-group-item">combined: {{combined}}</li>
+		{{/with}}
+	</ul>
+</section>
+<section>
+ <br>
+	<ul class="list-group">
+ 		<span class="badge text-bg-dark">
+			<li class="list-group-item disabled" aria-disabled="true">Price</li>
+		</span>
+		{{#with price}}
+  		<li class="list-group-item">Base: {{base}}</li>
+  		<li class="list-group-item">Destination: {{destination}}</li>
+		<li class="list-group-item">Options: Navigation = {{options.navigation}}, Moonroof = {{options.moonroof}}, Premiun Paint = {{options.premium_paint}}</li>
+	</ul> <br>
+	<button type="button" class="btn btn-primary btn-lg">Total price {{total}}$</button>
+	{{/with}}
+</section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
