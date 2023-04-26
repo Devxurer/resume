@@ -1,0 +1,177 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <section>
+    <h1>
+      {{name}}
+      <span class='badge bg-secondary'>In Stock</span></h1>
+    <br />
+    <br />
+    <span class='badge text-bg-primary'>Special price:
+      {{price}}</span>
+    <br />
+    <br />
+    <mark> {{description}} </mark>
+    <br />
+    <br />
+    <b>Category:</b>
+    <span class='badge text-bg-primary'> {{category}}</span>
+    <br />
+    <br />
+  </section>
+
+  <section>
+    {{#with features}}
+      <div>
+        <ul class='list-group'>
+          <li
+            class='list-group-item active'
+            aria-current='true'
+          ><span class='badge text-bg-primary'>
+              Processor</span></li>
+          <li class='list-group-item'>Brand:
+            {{processor.brand}}</li>
+          <li class='list-group-item'>Model:
+            {{processor.model}}</li>
+          <li class='list-group-item'>Speed:
+            {{processor.speed}}</li>
+          <li class='list-group-item'>Cores:
+            {{processor.cores}}</li>
+          <li class='list-group-item'>Cache:
+            {{processor.cache}}</li>
+        </ul>
+      </div>
+      <div>
+        <ul class='list-group'>
+          <li
+            class='list-group-item active'
+            aria-current='true'
+          ><span class='badge text-bg-primary'>
+              Memory</span></li>
+          <li class='list-group-item'>Type:
+            {{memory.type}}</li>
+          <li class='list-group-item'>Size:
+            {{memory.size}}</li>
+          <li class='list-group-item'>Storage:
+            {{memory.speed}}</li>
+        </ul>
+      </div>
+      <div>
+        <ul class='list-group'>
+          <li
+            class='list-group-item active'
+            aria-current='true'
+          ><span class='badge text-bg-primary'>
+              Display</span></li>
+          <li class='list-group-item'>Size:
+            {{display.size}}</li>
+          <li class='list-group-item'>Resolution:
+            {{display.resolution}}</li>
+          <li class='list-group-item'>Technology:
+            {{display.technology}}</li>
+          <li class='list-group-item'>Color Space:
+            {{display.color_space}}</li>
+          <li class='list-group-item'>Brightness:
+            {{display.brightness}}</li>
+          <li class='list-group-item'>Refresh Rate:
+            {{display.refresh_rate}}</li>
+        </ul>
+      </div>
+      <div>
+        <ul class='list-group'>
+          <li
+            class='list-group-item active'
+            aria-current='true'
+          ><span class='badge text-bg-primary'>
+              Graphics</span></li>
+          <li class='list-group-item'>Brand:
+            {{graphics.brand}}</li>
+          <li class='list-group-item'>Model:
+            {{graphics.model}}</li>
+          <li class='list-group-item'>Memory:
+            {{graphics.memory}}</li>
+        </ul>
+      </div>
+      <div>
+        <h4>
+          <span class='badge text-bg-primary'>
+            Ports</span>
+        </h4>
+        {{#each ports}}<ul
+            class='list-group list-group-horizontal'
+          >
+            <li class='list-group-item'>{{type}}</li>
+            <li class='list-group-item'>Count:
+              {{count}}</li>
+            {{#each features}}
+              <li class='list-group-item'>{{this}}</li>
+            {{/each}}
+          </ul>{{/each}}
+      </div>
+      <div>
+        <ul class='list-group'>
+          <li
+            class='list-group-item active'
+            aria-current='true'
+          ><span class='badge text-bg-primary'>
+              Battery</span></li>
+          <li class='list-group-item'>Type:
+            {{battery.type}}</li>
+          <li class='list-group-item'>Capacity:
+            {{battery.capacity}}</li>
+          <li class='list-group-item'>Battery Life:
+            {{battery.life}}</li>
+        </ul>
+      </div>
+      <div>
+        <ul class='list-group'>
+          <li
+            class='list-group-item active'
+            aria-current='true'
+          ><span class='badge text-bg-primary'>
+              Other Features
+            </span></li>
+          <li class='list-group-item'>Weight:
+            {{weight}}</li>
+          <li class='list-group-item'><b>Dimesnions:</b>
+            Height:
+            {{dimensions.height}}, Width:
+            {{dimensions.width}}, Depth:
+            {{dimensions.depth}}.</li>
+          <li class='list-group-item'>Battery Life:
+            {{battery.life}}</li>
+          <li class='list-group-item'>OS:
+            {{operating_system}}</li>
+        </ul>
+      </div>
+      <div>
+        <div class='dropdown'>
+          <button
+            class='btn btn-secondary dropdown-toggle'
+            type='button'
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+          >
+            Accessories
+          </button>
+          <ul class='dropdown-menu'>
+            {{#each accessories}}
+              <li><a class='dropdown-item' href='#'>{{name}}
+                  Price:
+                  {{price}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    {{/with}}
+  </section>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
