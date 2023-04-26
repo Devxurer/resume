@@ -1,0 +1,90 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+   <section>
+		<h2>{{name}}<span class="badge bg-secondary"> Language</span></h2> <br>
+			<mark>{{description}}</mark> <br>
+		<b>Year of founded and founder:</b>
+		{{#with history}}
+		 	{{year}}, {{founder}}. 
+		{{/with}} 	<br>
+			 			<br>
+		<h3><span class="badge text-bg-primary">Types</span></h3>
+		<div class="card" style="width: 18rem;">
+		{{#each types}}		
+  			<ul class="list-group list-group-flush"> 
+   			 <li class="list-group-item">{{this}}</li>
+  			</ul>
+		{{/each}}
+		</div>
+		<h3><span class="badge text-bg-primary">Syntax</span></h3>
+		<div class="card" style="width: 18rem;">
+		{{#with syntax}}		
+  			<ul class="list-group list-group-flush"> 
+   			 <li class="list-group-item">{{#with variables}} Variables: {{this}} {{/with}}</li>
+				 <li class="list-group-item">{{#with functions}} Functions: {{this}} {{/with}}</li>
+				 <li class="list-group-item">{{#with conditionals}} Conditionals: {{this}} {{/with}}</li>
+				 <li class="list-group-item">{{#with loops}} Loops: {{this}} {{/with}}</li>
+				 <li class="list-group-item">{{#with classes}} Classes: {{this}} {{/with}}</li>
+  			</ul>
+		{{/with}}
+		</div>
+		<br>
+		<br>
+		<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <span class="badge text-bg-primary">Features</span>
+  </div>
+  {{#each features}}
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{this}}</li>
+  </ul>
+  {{/each}}
+</div>
+		<br>
+		<br>
+		<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <span class="badge text-bg-primary">Libraries</span>
+  </div>
+  {{#each libraries}}
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{this}}</li>
+  </ul>
+  {{/each}}
+</div>
+		<br>
+		<br>
+		<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    <span class="badge text-bg-primary">Tools</span>
+  </div>
+  {{#each tools}}
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{this}}</li>
+  </ul>
+  {{/each}}
+</div>
+		<br>
+		<br>
+<p>
+	{{#each community}}
+  <ul>
+	<li style="color: black">
+		<a class="btn btn-primary" data-bs-toggle="collapse" href="https://stackoverflow.com/" role="button" aria-expanded="false" aria-controls="collapseExample">
+		{{name}} ({{type}})
+		</a>
+	</li>
+  </ul>
+  {{/each}}
+</p>
+	</section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
