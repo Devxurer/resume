@@ -8,14 +8,17 @@
       <div class='container text-start'>
         <div class='row row-col-12'>
           {{#each links}}
-            <div class='col g-3'>
+            <div class='col g-2'>
               <a class='' href='{{href}}'>{{text}}</a>
             </div>
-          {{/each}}</div>
+          {{/each}}
         {{#with button}}
-          <a href='{{href}}' class='btn btn-primary'>
-            {{text}}
-          </a>
+          <div class='col g-2'>
+            <a href='{{href}}' class='btn btn-primary'>
+              {{text}}
+            </a>
+          </div>
+			 </div>
         {{/with}}
       </div>
     {{/with}}
