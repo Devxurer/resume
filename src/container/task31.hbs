@@ -205,39 +205,44 @@
     <br />
     <hr />
     <br />
-    <section>
-      {{#with footer}}
-        <h5>{{title}}</h5>
-        <div class='container text-start'>
-          <div class='row row-col-12'>
-            {{#each navigation}}
-              <div class='col g-3'>
-                <a class='' href='{{href}}'>{{text}}</a>
-              </div>
-            {{/each}}</div>
-        </div>
-        <div class='container text-start'>
-          <div class='container text-start'>
-            <div class='row row-col-12'>
-              {{#each socialMedia}}
-                <div class='col g-3'>
-                  <a class='' href='{{link}}'>{{name}}</a>
-                </div>
-              {{/each}}</div>
-          </div>
-        </div>
-        <div class='container text-start'>
-          <div class='container text-start'>
-            <div class='row row-col-12'>
-              {{#each partners}}
-                <div class='col g-3'>
-                  <a class='' href='{{link}}'>{{name}}</a>
-                </div>
-              {{/each}}</div>
-          </div>
-        </div>
-      {{/with}}</section>
   </main>
+  <footer>
+    <footer>
+      <h3>{{footer.title}}</h3>
+      <div class='row'>
+        <div class='col-3'>
+          <ul class='list-group'>
+            {{#each footer.navigation}}<li
+                class='list-group-item'
+              ><a href='{{href}}'>{{text}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class='col-3'>
+          <ul class='list-group'>
+            {{#each footer.socialMedia}}<li
+                class='list-group-item'
+              ><a
+                  class='btn btn-outline-dark'
+                  href='{{link}}'
+                >{{name}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class='col-3'>
+          <ul class='list-group'>
+            {{#each footer.partners}}<li
+                class='list-group-item'
+              ><a
+                  class='btn btn-outline-info'
+                  href='{{link}}'
+                >{{name}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </footer>
 </div>
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
