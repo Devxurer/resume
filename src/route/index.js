@@ -1504,7 +1504,7 @@ router.get('/task41', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task41', {
-    layout: 'shop',
+    layout: 'shophomegit',
     navigation: {
       links: [
         {
