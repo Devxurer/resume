@@ -1,0 +1,15 @@
+<section class='mt-5 mb-5'>
+  <div class='row'>
+    {{#each footer}}
+      <div class='col-2'>
+        <ul class='list-group'>
+          {{#each this}}
+            <li class='list-group-item'><a
+                href='{{link}}'
+              >{{text}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+</section>

@@ -1,0 +1,13 @@
+ <section>
+    <div class='card'>
+      <ul class='nav'>
+        <li class='nav-item'> {{#with navigation}} {{#each links}}
+          <a class='nav-link' href='{{href}}'>{{text}}</a>
+        </li>
+        {{/each}} {{/with}}
+		   <li class='nav-item'>
+          <a class='nav-link disabled' href='#'>Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </section>
