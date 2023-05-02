@@ -1,13 +1,25 @@
- <section>
-    <div class='card'>
-      <ul class='nav'>
-        <li class='nav-item'> {{#with navigation}} {{#each links}}
-          <a class='nav-link' href='{{href}}'>{{text}}</a>
-        </li>
-        {{/each}} {{/with}}
-		   <li class='nav-item'>
-          <a class='nav-link disabled' href='#'>Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </section>
+<section>
+  <div class='card'>
+    <ul class='nav list-inline'>
+      {{#with navigation}}
+        {{#each links}}
+          {{#if @last}}
+            <li class='nav-item'>
+              <a
+                class='nav-link disabled'
+                href='{{href}}'
+              >{{text}}</a>
+            </li>
+          {{else}}
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                href='{{href}}'
+              >{{text}}</a>
+            </li>
+          {{/if}}
+        {{/each}}
+      {{/with}}
+    </ul>
+  </div>
+</section>

@@ -4,9 +4,15 @@
       <div class='col-2'>
         <ul class='list-group'>
           {{#each this}}
-            <li class='list-group-item'><a
-                href='{{link}}'
-              >{{text}}</a></li>
+            {{#if @last}}
+              <li
+                class='list-group-item disabled'
+              >{{text}}</li>
+            {{else}}
+              <li class='list-group-item'><a
+                  href='{{link}}'
+                >{{text}}</a></li>
+            {{/if}}
           {{/each}}
         </ul>
       </div>
