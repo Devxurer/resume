@@ -1,4 +1,43 @@
-h1 {
-	color: hsla(212, 84%, 41%, 0.466);
-	background: black;
+
+/* * {
+	color: red;
+} */
+
+:root {
+	background-color: purple;
+}
+
+
+html {
+	background-color: blue;
+	max-width: 1200px;
+}
+
+mark {
+	background-color: rgba(18, 215, 100, 0.216);	
+}
+
+.box {
+	background-color: darkgray;
+}
+
+body {
+	background-color: lawngreen;
+}
+
+#user {
+	color: rgb(14, 0, 162);
+}
+
+section > p {
+	color:palegoldenrod;
+}
+
+section em.child {
+	color: yellow;
+}
+
+.sister p ~ h2 {
+	background-color: black;
+	color: white
 }
