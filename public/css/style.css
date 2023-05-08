@@ -3,7 +3,7 @@
 	color: red;
 } */
 
-:root {
+/* :root {
 	background-color: purple;
 }
 
@@ -33,11 +33,48 @@ section > p {
 	color:palegoldenrod;
 }
 
-section em.child {
+section em.child { 
 	color: yellow;
 }
 
 .sister p ~ h2 {
 	background-color: black;
 	color: white
+} */
+
+.card-dark {
+	background-color: whitesmoke;
 }
+
+.input-dark {
+	background: rgba(246, 255, 0, 0.621);
+
+}
+
+.input-dark[required] {
+	background: rgb(139, 44, 248);
+}
+
+.input-dark[type='number'] {
+	background: rgb(193, 199, 162);
+}
+
+.input-dark::placeholder {
+	color: black;
+}
+
+.small-img[alt~="art"] {
+	height: 500px;
+	width: 400px;
+}
+
+button[class|="btn"] {
+	background: black;
+	color: white;
+}
+
+a[class*="btn"] {
+	background: rgb(110, 13, 13);
+}
+
+
